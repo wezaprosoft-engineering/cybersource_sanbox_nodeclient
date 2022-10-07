@@ -14,7 +14,7 @@ git clone ''
 npm install
 ````
 
-* Send A Post request to "http://localhost:3000/api/pay/card" with the following body
+* Send A Post request to "http://localhost:3000/api/pay/card" with the following json payload
 
 ````json
 {
