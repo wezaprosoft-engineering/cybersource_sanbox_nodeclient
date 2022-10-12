@@ -2,7 +2,7 @@ const cybersourceRestApi = require('cybersource-rest-client');
 const path = require('path');
 const merchant = path.resolve('config/merchant.config.js');
 const configuration = require(merchant);
-const nanoid = require('nanoid');
+const { nanoid } = require("nanoid");
 
 const creditPay = async (req,res,next)  => {
 	try {
