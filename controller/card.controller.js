@@ -1,9 +1,8 @@
-'use strict';
-
 const cybersourceRestApi = require('cybersource-rest-client');
 const path = require('path');
 const merchant = path.resolve('config/merchant.config.js');
 const configuration = require(merchant);
+const nanoid = require('nanoid');
 
 const creditPay = async (req,res,next)  => {
 	try {
@@ -12,7 +11,7 @@ const creditPay = async (req,res,next)  => {
 		const requestObj = new cybersourceRestApi.CreateCreditRequest();
 
 		const clientReferenceInformation = new cybersourceRestApi.Ptsv2paymentsClientReferenceInformation();
-		clientReferenceInformation.code = req.body.referenceCode //'12345678';
+		clientReferenceInformation.code = nanoid() //'12345678';
 		requestObj.clientReferenceInformation = clientReferenceInformation;
 
 		const paymentInformation = new cybersourceRestApi.Ptsv2paymentsidrefundsPaymentInformation();
@@ -34,11 +33,11 @@ const creditPay = async (req,res,next)  => {
 		const orderInformationBillTo = new cybersourceRestApi.Ptsv2paymentsidcapturesOrderInformationBillTo();
 		orderInformationBillTo.firstName = req.body.firstName //'John';
 		orderInformationBillTo.lastName = req.body.lastName // 'Deo';
-		orderInformationBillTo.address1 = '900 Metro Center Blvd';
-		orderInformationBillTo.locality = 'Foster City';
-		orderInformationBillTo.administrativeArea = 'CA';
-		orderInformationBillTo.postalCode = '48104-2201';
-		orderInformationBillTo.country = 'US';
+		orderInformationBillTo.address1 = req.body.address || '';
+		orderInformationBillTo.locality = req.body.locality || '';
+		orderInformationBillTo.administrativeArea =  '';
+		orderInformationBillTo.postalCode = '';
+		orderInformationBillTo.country = req.body.country || '';
 		orderInformationBillTo.email = req.body.email // 'steve@tests.com';
 		orderInformationBillTo.phoneNumber = req.body.phoneNumber // '9321499232';
 		orderInformation.billTo = orderInformationBillTo;
