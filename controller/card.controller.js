@@ -31,15 +31,15 @@ const creditPay = async (req,res,next)  => {
 		orderInformation.amountDetails = orderInformationAmountDetails;
 
 		const orderInformationBillTo = new cybersourceRestApi.Ptsv2paymentsidcapturesOrderInformationBillTo();
-		orderInformationBillTo.firstName = req.body.firstName //'John';
-		orderInformationBillTo.lastName = req.body.lastName // 'Deo';
-		orderInformationBillTo.address1 = req.body.address || '';
-		orderInformationBillTo.locality = req.body.locality || '';
-		orderInformationBillTo.administrativeArea =  '';
-		orderInformationBillTo.postalCode = '';
-		orderInformationBillTo.country = req.body.country || '';
-		orderInformationBillTo.email = req.body.email // 'steve@tests.com';
-		orderInformationBillTo.phoneNumber = req.body.phoneNumber || '' // '9321499232';
+		orderInformationBillTo.firstName = req.body.firstName;
+		orderInformationBillTo.lastName = req.body.lastName;
+		orderInformationBillTo.address1 = req.body.address || 'N/A';
+		orderInformationBillTo.locality = req.body.locality || 'N/A';
+		orderInformationBillTo.administrativeArea = 'CA';
+		orderInformationBillTo.postalCode = 'N/A';
+		orderInformationBillTo.country = req.body.country || 'KE';
+		orderInformationBillTo.email = req.body.email ;
+		orderInformationBillTo.phoneNumber = req.body.phoneNumber || 'N/A' // '9321499232';
 		orderInformation.billTo = orderInformationBillTo;
 
 		requestObj.orderInformation = orderInformation;
