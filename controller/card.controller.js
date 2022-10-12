@@ -39,7 +39,7 @@ const creditPay = async (req,res,next)  => {
 		orderInformationBillTo.postalCode = '';
 		orderInformationBillTo.country = req.body.country || '';
 		orderInformationBillTo.email = req.body.email // 'steve@tests.com';
-		orderInformationBillTo.phoneNumber = req.body.phoneNumber // '9321499232';
+		orderInformationBillTo.phoneNumber = req.body.phoneNumber || '' // '9321499232';
 		orderInformation.billTo = orderInformationBillTo;
 
 		requestObj.orderInformation = orderInformation;
@@ -72,3 +72,5 @@ if (require.main === module) {
 	});
 }
 module.exports = creditPay
+
+

@@ -25,8 +25,7 @@ npm install
     "firstName":"myfirstname",
     "lastName":"mylastname",
     "email":"test@email.com",
-    "phoneNumber":"254792340243",
-    "referenceCode":"87654321"
+    "phoneNumber":"254792340243"
 }
 ````
 
