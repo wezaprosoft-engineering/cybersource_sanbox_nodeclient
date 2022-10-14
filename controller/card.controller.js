@@ -33,13 +33,13 @@ const creditPay = async (req,res,next)  => {
 		const orderInformationBillTo = new cybersourceRestApi.Ptsv2paymentsidcapturesOrderInformationBillTo();
 		orderInformationBillTo.firstName = req.body.firstName;
 		orderInformationBillTo.lastName = req.body.lastName;
-		orderInformationBillTo.address1 = req.body.address || 'Nairobi';
-		orderInformationBillTo.locality = req.body.locality || 'Kenya';
+		orderInformationBillTo.address1 = req.body.address || '1 Market St';
+		orderInformationBillTo.locality = req.body.locality || 'san francisco';
 		orderInformationBillTo.administrativeArea = 'CA';
-		orderInformationBillTo.postalCode = '00100';
-		orderInformationBillTo.country = req.body.country || 'KE';
+		orderInformationBillTo.postalCode = '94105';
+		orderInformationBillTo.country = req.body.country || 'US';
 		orderInformationBillTo.email = req.body.email ;
-		orderInformationBillTo.phoneNumber = req.body.phoneNumber || '9321499232';
+		orderInformationBillTo.phoneNumber = req.body.phoneNumber || '4158880000';
 		orderInformation.billTo = orderInformationBillTo;
 
 		requestObj.orderInformation = orderInformation;
