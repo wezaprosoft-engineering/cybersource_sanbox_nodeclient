@@ -11,12 +11,6 @@ app.use(express.urlencoded({ extended: false }));
 app.use(morgan('dev'));
 
 
-app.set('view engine', 'ejs');
-
-app.get('/', async (req, res, next) => {
-  res.render('index');
-});
-
 app.use('/api', require('./routes/api.route'));
 
 app.use((req, res, next) => {
