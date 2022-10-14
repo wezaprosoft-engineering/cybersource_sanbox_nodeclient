@@ -16,9 +16,9 @@ const creditPay = async (req,res,next)  => {
 
 		const paymentInformation = new cybersourceRestApi.Ptsv2paymentsidrefundsPaymentInformation();
 		const paymentInformationCard = new cybersourceRestApi.Ptsv2paymentsidrefundsPaymentInformationCard();
-		paymentInformationCard.number = req.body.cardNumber //'4111111111111111';
-		paymentInformationCard.expirationMonth = req.body.expirationMonth //'03';
-		paymentInformationCard.expirationYear = req.body.expirationYear // '2031';
+		paymentInformationCard.number = req.body.cardNumber || '4111111111111111';
+		paymentInformationCard.expirationMonth = req.body.expirationMonth ||'03';
+		paymentInformationCard.expirationYear = req.body.expirationYear || '2031';
 		paymentInformationCard.type = '001';
 		paymentInformation.card = paymentInformationCard;
 
@@ -26,20 +26,20 @@ const creditPay = async (req,res,next)  => {
 
 		const orderInformation = new cybersourceRestApi.Ptsv2paymentsidrefundsOrderInformation();
 		const orderInformationAmountDetails = new cybersourceRestApi.Ptsv2paymentsidcapturesOrderInformationAmountDetails();
-		orderInformationAmountDetails.totalAmount = req.body.amount //'200';
+		orderInformationAmountDetails.totalAmount = req.body.amount || '150';
 		orderInformationAmountDetails.currency = 'usd';
 		orderInformation.amountDetails = orderInformationAmountDetails;
 
 		const orderInformationBillTo = new cybersourceRestApi.Ptsv2paymentsidcapturesOrderInformationBillTo();
 		orderInformationBillTo.firstName = req.body.firstName;
 		orderInformationBillTo.lastName = req.body.lastName;
-		orderInformationBillTo.address1 = req.body.address || 'N/A';
-		orderInformationBillTo.locality = req.body.locality || 'N/A';
+		orderInformationBillTo.address1 = req.body.address || 'Nairobi';
+		orderInformationBillTo.locality = req.body.locality || 'Kenya';
 		orderInformationBillTo.administrativeArea = 'CA';
-		orderInformationBillTo.postalCode = 'N/A';
+		orderInformationBillTo.postalCode = '00100';
 		orderInformationBillTo.country = req.body.country || 'KE';
 		orderInformationBillTo.email = req.body.email ;
-		orderInformationBillTo.phoneNumber = req.body.phoneNumber || 'N/A' // '9321499232';
+		orderInformationBillTo.phoneNumber = req.body.phoneNumber || '9321499232';
 		orderInformation.billTo = orderInformationBillTo;
 
 		requestObj.orderInformation = orderInformation;
