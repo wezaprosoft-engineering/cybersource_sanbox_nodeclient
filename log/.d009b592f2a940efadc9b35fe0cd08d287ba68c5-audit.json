@@ -19,6 +19,11 @@
             "date": 1665737835762,
             "name": "log/cybs-2022-10-14.log",
             "hash": "d252b75055cde83d7a9ae1b30a022aa01b0aab7583008ed02f865d62b4158e85"
+        },
+        {
+            "date": 1665992736534,
+            "name": "log/cybs-2022-10-17.log",
+            "hash": "a783a7241aeadd65e4230fa7178b86ff8cfe41d819c477600a83483396c3185e"
         }
     ],
     "hashType": "sha256"

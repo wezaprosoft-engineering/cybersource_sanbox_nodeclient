@@ -36,7 +36,7 @@ const creditPay = async (req, res, next) => {
 		orderInformationBillTo.address1 = req.body.address || '1 Market St';
 		orderInformationBillTo.locality = req.body.locality || 'san francisco';
 		orderInformationBillTo.administrativeArea = 'CA';
-		orderInformationBillTo.postalCode = '94105';
+		orderInformationBillTo.postalCode = req.body.postalCode || '94105';
 		orderInformationBillTo.country = req.body.country || 'US';
 		orderInformationBillTo.email = req.body.email;
 		orderInformationBillTo.phoneNumber = req.body.phoneNumber || '4158880000';
