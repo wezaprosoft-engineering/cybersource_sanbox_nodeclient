@@ -52,10 +52,8 @@ const creditPay = async (req, res, next) => {
 				next(error);
 			}
 			else if (data) {
-				console.log('\nData : ' + JSON.stringify(data));
+				// console.log('\nData : ' + JSON.stringify(data));
 			}
-
-			console.log('\nResponse : ' + JSON.stringify(response));
 			console.log('\nResponse Code of Process a Credit : ' + JSON.stringify(response['status']));
 			res.json(response);
 

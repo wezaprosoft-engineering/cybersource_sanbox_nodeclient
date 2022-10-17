@@ -9,6 +9,8 @@ const AuthenticationType = 'http_signature';
 const RunEnvironment = 'apitest.cybersource.com';
 const MerchantId = process.env.MERCHANT_ID || 'testrest';
 
+console.log('Merchan Id in use -->',MerchantId);
+
 // http_signature parameters
 const MerchantKeyId = process.env.MERCHANT_KEY || '08c94330-f618-42a3-b09d-e1e43be5efda';
 const MerchantSecretKey = process.env.MERCHANT_SECRETE || 'yBJxy6LjM2TmcPGu+GaJrHtkke25fPpUX+UY6/L/1tE=';
